@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:padding="30dp"
+    android:background="#eaeaea">
+
+    <TextView android:id="@+id/textView1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Candidates of zipcode:" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <EditText android:id="@+id/text_calories"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:inputType="number"
+            android:maxLength="6"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+
+            <Button android:id="@+id/button_zipco234de"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="Search"
+                android:layout_gravity="center_horizontal"/>
+
+    </LinearLayout>
+
+    <TextView android:id="@+id/textView1121"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="" />
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView android:id="@+id/text_pushup"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#000000"
+                android:text="Bill Nelson"/>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <ImageButton
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:id="@+id/imageButton"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/bill"
+                    android:scaleType="fitCenter"
+                    android:padding="0dp"/>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <Button android:id="@+id/button_zipcod1e"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:text="Email"
+                        android:layout_gravity="center_horizontal"/>
+
+                    <Button android:id="@+id/button_zipcode"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:text="Website"
+                        android:layout_gravity="center_horizontal"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/tweet2"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/tweet"
+                android:layout_gravity="left"/>
+
+            <TextView android:id="@+id/textView0"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".1"
+                android:gravity="left"
+                android:text="" />
+
+            <TextView android:id="@+id/text_calories_burnt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.5"
+                android:layout_gravity="left"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#000000"
+                android:text="NTSB just announced it will search again for El Faro’s missing data recorder. http://bit.ly/1PPOodK "/>
+
+
+        </LinearLayout>
+
+            <TextView android:id="@+id/textView111"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="" />
+
+            <TextView android:id="@+id/text_pushup1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#000000"
+                android:text="Marco Rubio"/>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <ImageButton
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:id="@+id/imageButton2"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/marco"
+                    android:scaleType="fitCenter"
+                    android:padding="0dp"/>
+
+                <TextView android:id="@+id/textView21"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".2"
+                    android:gravity="left"
+                    android:text="" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <Button android:id="@+id/button_zipcod12e"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:text="Email"
+                        android:layout_gravity="center_horizontal"/>
+
+                    <Button android:id="@+id/button_zipcodewe"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:text="Website"
+                        android:layout_gravity="center_horizontal"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <ImageView
+                    android:id="@+id/tweadfet2"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/tweet"
+                    android:layout_gravity="left"/>
+
+                <TextView android:id="@+id/texafetView0"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".1"
+                    android:gravity="left"
+                    android:text="" />
+
+                <TextView android:id="@+id/text_caloaferies_burnt"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.5"
+                    android:layout_gravity="left"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="#000000"
+                    android:text="Honored to have the support of South Carolina Governor @NikkiHaley! Welcome to the team!
+http://rub.io/mLnL1k "/>
+
+
+            </LinearLayout>
+
+            <TextView android:id="@+id/textView1111"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="" />
+
+            <TextView android:id="@+id/text_pushup11"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#000000"
+                android:text="Corrine Brown"/>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <ImageButton
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:id="@+id/imageButton3"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/corrine"
+                    android:scaleType="fitCenter"
+                    android:padding="0dp"/>
+
+                <TextView android:id="@+id/textView211"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".2"
+                    android:gravity="left"
+                    android:text="" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <Button android:id="@+id/button_zipcweod1e"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:text="Email"
+                        android:layout_gravity="center_horizontal"/>
+
+                    <Button android:id="@+id/button_zipwecode"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:text="Website"
+                        android:layout_gravity="center_horizontal"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <ImageView
+                    android:id="@+id/tweweet2"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/tweet"
+                    android:layout_gravity="left"/>
+
+                <TextView android:id="@+id/tweextView0"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".1"
+                    android:gravity="left"
+                    android:text="" />
+
+                <TextView android:id="@+id/text_calories_bweurnt"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.5"
+                    android:layout_gravity="left"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="#000000"
+                    android:text="“Success isn’t about how much money you make, it’s about the difference you make in people’s lives.” #WomenSucceed "/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="450dp"
+                android:layout_height="wrap_content">
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
