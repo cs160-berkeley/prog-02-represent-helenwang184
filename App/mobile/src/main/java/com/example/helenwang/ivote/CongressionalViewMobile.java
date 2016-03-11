@@ -15,6 +15,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -201,9 +202,20 @@ public class CongressionalViewMobile extends AppCompatActivity implements View.O
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.button_zipco234de:
-                Intent sendIntent = new Intent(getBaseContext(), PhoneToWatchService.class);
-                startService(sendIntent);
+                if (zip.getText().length() == 5) {
+                    String zipcode_display = zip.getText().toString();
+                    Intent congressionalViewMobile = new Intent(getApplicationContext(), com.example.helenwang.ivote.CongressionalViewMobile.class);
+//                    Intent sendIntent = new Intent(getBaseContext(), PhoneToWatchService.class);
+                    congressionalViewMobile.putExtra("zip_display", zipcode_display);
+//                    sendIntent.putExtra("zip_display", zipcode_display);
+                    startActivity(congressionalViewMobile);
+//                    startService(sendIntent);
+                } else {
+                    Toast.makeText(this, "You did not enter a valid zipcode", Toast.LENGTH_SHORT).show();
+                }
                 break;
+
+
         }
     }
 }
