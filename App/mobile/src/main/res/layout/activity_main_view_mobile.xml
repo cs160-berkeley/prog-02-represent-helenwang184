@@ -3,10 +3,9 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:paddingLeft="30dp"
-    android:paddingRight="30dp"
-    android:paddingTop="30dp"
+    android:padding="30dp"
     android:weightSum="1"
+    android:gravity="center_horizontal"
     android:background="#eaeaea">
 
         <LinearLayout
@@ -23,11 +22,17 @@
                     android:layout_height="40dp"
                     android:layout_weight="1.5"
                     android:gravity="center_horizontal"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
                     android:textColor="#000000"
-                    android:text="Welcome to iVote!"/>
+                    android:text="Welcome to iVote!"
+                    android:fontFamily="sans-serif-condensed" />
 
             </LinearLayout>
+
+            <TextView android:id="@+id/text_welcomee"
+                android:layout_width="0dp"
+                android:layout_height="10dp"
+                android:text=""/>
 
             <ImageView
                 android:id="@+id/imageView1"
@@ -45,14 +50,21 @@
                 android:layout_width="300dp"
                 android:layout_height="wrap_content">
 
+                <TextView android:id="@+id/textView122"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".2"
+                    android:gravity="left"
+                    android:text="" />
+
                 <EditText android:id="@+id/edit_zip"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="left"
-                    android:maxLength="6"
+                    android:maxLength="5"
                     android:inputType="number"
-                    android:hint="e.g. 36830"/>
+                    android:hint="Enter zipcode"/>
 
                 <TextView android:id="@+id/textView12"
                     android:layout_width="0dp"
@@ -61,31 +73,32 @@
                     android:gravity="left"
                     android:text="" />
 
-                <Button android:id="@+id/button_zipcode"
+                <Button android:id="@+id/button_home_current_location"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    android:text="Search Zipcode"
-                    android:layout_gravity="center_horizontal"/>
+                    android:text="Current Location"
+                    android:layout_gravity="center_horizontal" />
+
+                <TextView android:id="@+id/textView1322"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".2"
+                    android:gravity="left"
+                    android:text="" />
 
             </LinearLayout>
 
             <TextView android:id="@+id/textView14"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textAppearance="?android:attr/textAppearanceSmall"
                 android:text="" />
 
-            <Button android:id="@+id/button_current_location"
+            <Button android:id="@+id/button_home_search"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:text="Search Current Location"
-                android:layout_gravity="center_horizontal"/>
-
-            <TextView android:id="@+id/textView15"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="" />
+                android:text="Search"
+                android:layout_gravity="center_horizontal" />
 
         </LinearLayout>
 </LinearLayout>

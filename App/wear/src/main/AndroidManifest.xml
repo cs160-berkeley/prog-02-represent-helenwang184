@@ -3,6 +3,8 @@
     package="com.example.helenwang.ivote">
 
     <uses-feature android:name="android.hardware.type.watch" />
+    <uses-permission
+        android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -36,6 +38,7 @@
                 <action android:name="com.google.android.gms.wearable.BIND_LISTENER" />
             </intent-filter>
         </service>
+
     </application>
 
 </manifest>
