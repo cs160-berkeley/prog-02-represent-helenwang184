@@ -21,7 +21,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class CongressionalViewMobile extends AppCompatActivity implements View.OnClickListener {
@@ -30,7 +29,7 @@ public class CongressionalViewMobile extends AppCompatActivity implements View.O
     Button button2;
     String zip_display;
     EditText zip;
-    private List<Legislator> myLegislators = new ArrayList<>();
+    public List<Legislator> myLegislators = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -121,8 +120,8 @@ public class CongressionalViewMobile extends AppCompatActivity implements View.O
                         int picture = R.drawable.big_bill;
                         String tweet = "NTSB just announced it will search again for El Faro’s missing data recorder. http://bit.ly/1PPOodK ";
                         String termEnds = array.getString("term_end");
-                        List<String> committees = Arrays.asList("a", "b");
-                        List<String> bills = Arrays.asList("a", "b");
+                        String committees = "Aging, Armed Services, Commerce, Science, Transportation, Finance";
+                        String bills = "Lithium Battery Safety Act of 2016 Feb 10, 2016";
                         myLegislators.add(new Legislator(name, party, position, email, website, picture, tweet, termEnds, committees, bills));
                         Log.d("adapter", myLegislators.size() + "size");
                     }
@@ -151,6 +150,15 @@ public class CongressionalViewMobile extends AppCompatActivity implements View.O
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent detailedViewMobile = new Intent(getApplicationContext(), com.example.helenwang.ivote.DetailedViewMobile.class);
+                Legislator l = myLegislators.get(position);
+                detailedViewMobile.putExtra("picture", l.getPicture() + "");
+                detailedViewMobile.putExtra("position", l.getPosition() + "");
+                detailedViewMobile.putExtra("name", l.getName() + "");
+                detailedViewMobile.putExtra("party", l.getParty() + "");
+                detailedViewMobile.putExtra("term_ends", l.getTermEnds() + "");
+                detailedViewMobile.putExtra("committees", l.getCommittees() + "");
+                detailedViewMobile.putExtra("name", l.getName() + "");
+                detailedViewMobile.putExtra("bills", l.getBills() + "");
                 startActivity(detailedViewMobile);
             }
         });

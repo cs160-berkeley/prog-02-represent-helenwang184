@@ -1,7 +1,5 @@
 package com.example.helenwang.ivote;
 
-import java.util.List;
-
 /**
  * Created by helenwang on 3/2/16.
  */
@@ -14,10 +12,10 @@ public class Legislator {
     private int picture;
     private String tweet;
     private String termEnds;
-    private List<String> committees;
-    private List<String> bills;
+    private String committees;
+    private String bills;
 
-    public Legislator(String name, String party, String position, String email, String website, int picture, String tweet, String termEnds, List<String> committees, List<String> bills) {
+    public Legislator(String name, String party, String position, String email, String website, int picture, String tweet, String termEnds, String committees, String bills) {
         super();
         this.name = name;
         this.party = party;
@@ -64,11 +62,11 @@ public class Legislator {
         return termEnds;
     }
 
-    public List<String> getCommittees() {
+    public String getCommittees() {
         return committees;
     }
 
-    public List<String> getBills() {
+    public String getBills() {
         return bills;
     }
 }
