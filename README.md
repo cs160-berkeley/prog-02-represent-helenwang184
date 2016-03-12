@@ -15,11 +15,11 @@ See [iVote] (https://vimeo.com/157815744)
 <img src="screenshots/1.png" height="400" alt="Screenshot"/>
 <img src="screenshots/2.png" height="400" alt="Screenshot"/>
 <img src="screenshots/3.png" height="400" alt="Screenshot"/>
-<img src="screenshots/4.png" height="400" alt="Screenshot"/>
 
 ## Acknowledgments
 
 * Hat tip to anyone who's code was used
+* http://android--examples.blogspot.com/2015/05/how-to-parse-json-data-in-android.html
 * Thank you Indragni Soft Solutions on YouTube for the WearableListView tutorial. 
 * Thank you Jasper for the helpful Office Hours. 
 * Thank you Claudia Nguyen for being a supportive friend. 
