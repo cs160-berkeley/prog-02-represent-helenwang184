@@ -67,12 +67,13 @@ public class MainViewMobile extends AppCompatActivity implements View.OnClickLis
                 if (zipcode.getText().length() == 5) {
                     zipcode_display = zipcode.getText().toString();
                     Intent congressionalViewMobile = new Intent(getApplicationContext(), com.example.helenwang.ivote.CongressionalViewMobile.class);
-
-//                    Intent sendIntent = new Intent(getBaseContext(), PhoneToWatchService.class);
                     congressionalViewMobile.putExtra("zip_display", zipcode_display);
-//                    sendIntent.putExtra("zip_display", zipcode_display);
                     startActivity(congressionalViewMobile);
-//                    startService(sendIntent);
+
+                    Intent sendIntent = new Intent(getBaseContext(), PhoneToWatchService.class);
+
+                    startService(sendIntent);
+
                 } else {
                     Toast.makeText(this, "You did not enter a valid zipcode", Toast.LENGTH_SHORT).show();
                 }

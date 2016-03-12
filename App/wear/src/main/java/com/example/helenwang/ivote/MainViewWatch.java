@@ -11,29 +11,20 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageView;
 
 import java.util.ArrayList;
 
 public class MainViewWatch extends Activity implements WearableListView.ClickListener {
 
     private WearableListView listView;
+    private ArrayList<Phone_legis> phone_legises;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.d("Watch", "6");
         setContentView(R.layout.activity_main_view_watch);
-
-
-
-
-//        mFeedBtn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent sendIntent = new Intent(getBaseContext(), WatchToPhoneService.class);
-//                startService(sendIntent);
-//            }
-//        });
+        phone_legises = new ArrayList<>();
         final WatchViewStub stub = (WatchViewStub) findViewById(R.id.watch_view_stub);
         stub.setOnLayoutInflatedListener(new WatchViewStub.OnLayoutInflatedListener() {
              @Override
@@ -43,14 +34,6 @@ public class MainViewWatch extends Activity implements WearableListView.ClickLis
                  listView.setClickListener(MainViewWatch.this);
              }
         });
-    }
-
-    private static ArrayList<Candidate> listItems;
-    static {
-        listItems = new ArrayList<Candidate>();
-        listItems.add(new Candidate("Bill Nelson", "Democrat", "Senator", "123@gmail.com", "bill.com", R.drawable.bill, "tweet"));
-        listItems.add(new Candidate("Marco Rubio", "Republican", "Senator", "123@gmail.com", "bill.com", R.drawable.marco, "tweet"));
-        listItems.add(new Candidate("Corrine Brown", "Democrat", "Representative", "123@gmail.com", "bill.com", R.drawable.corrine, "tweet"));
     }
 
     @Override
@@ -76,15 +59,14 @@ public class MainViewWatch extends Activity implements WearableListView.ClickLis
             Intent intent = getIntent();
             Bundle extras = intent.getExtras();
 
-//            if (extras != null) {
-//                Log.d("nihaoooo", extras.getString("zip_display"));
-//                String catName = extras.getString("zip_display");
-//                if (mFeedBtn==null) {
-//                    Log.d("WHY IS IT NULL", "WHAT THE");
-//                } else {
-//                    mFeedBtn.setText("Zipcode " + catName);
-//                }
-//            }
+            if (extras != null) {
+                Log.d("Watch", "7");
+                String[] ppl = extras.getString("msg").split("|");
+                for (int index = 0; index < ppl.length; index++) {
+                    String[] person = ppl[index].split(",");
+                    phone_legises.add(new Phone_legis(person[0], person[1], person[2]));
+                }
+            }
 
             mFeedBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -100,20 +82,15 @@ public class MainViewWatch extends Activity implements WearableListView.ClickLis
         @Override
         public void onBindViewHolder(WearableListView.ViewHolder viewHolder, int i) {
 
-            ImageView imageView = (ImageView) viewHolder.itemView.findViewById(R.id.item_imageView);
-            imageView.setImageResource(listItems.get(i).getPicture());
-
 //            TextView view = (TextView) viewHolder.itemView.findViewById(R.id.item_textView);
 //            view.setText(listItems.get(i).getPosition());
 
             Button view1 = (Button) viewHolder.itemView.findViewById(R.id.buttonWOWindividual);
-            view1.setText( listItems.get(i).getName());
+            view1.setText(phone_legises.get(i).getName());
 
-            Log.d("Detail", "1");
             view1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Log.d("Detail", "2");
                     Intent sendIntent = new Intent(getBaseContext(), WatchToPhoneService.class);
                     startService(sendIntent);
                 }
@@ -126,7 +103,7 @@ public class MainViewWatch extends Activity implements WearableListView.ClickLis
 
         @Override
         public int getItemCount() {
-            return listItems.size();
+            return phone_legises.size();
         }
     }
 }

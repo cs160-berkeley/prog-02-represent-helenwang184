@@ -4,6 +4,7 @@ import android.app.Service;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.IBinder;
+import android.util.Log;
 
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.wearable.MessageApi;
@@ -47,6 +48,7 @@ public class PhoneToWatchService extends Service {
         // Which cat do we want to feed? Grab this info from INTENT
         // which was passed over when we called startService
         final Bundle extras = intent.getExtras();
+        Log.d("Watch", "3");
         // Send the message with the cat name
         new Thread(new Runnable() {
             @Override
@@ -55,7 +57,9 @@ public class PhoneToWatchService extends Service {
                 mApiClient.connect();
                 //now that you're connected, send a massage with the cat name
                 if (extras != null) {
-                    sendMessage("/Scroll", "Scroll");
+                    Log.d("Watch", "4");
+                    String msg = extras.getString("msg");
+                    sendMessage(msg, "Scroll");
                 } else {
                     sendMessage("/Election", "Election");
                 }
@@ -73,11 +77,14 @@ public class PhoneToWatchService extends Service {
     private void sendMessage( final String path, final String text ) {
         //one way to send message: start a new thread and call .await()
         //see watchtophoneservice for another way to send a message
+        Log.d("Watch", "4.2");
         new Thread( new Runnable() {
             @Override
             public void run() {
+
                 NodeApi.GetConnectedNodesResult nodes = Wearable.NodeApi.getConnectedNodes( mApiClient ).await();
                 for(Node node : nodes.getNodes()) {
+                    Log.d("Watch", "4.3");
                     //we find 'nodes', which are nearby bluetooth devices (aka emulators)
                     //send a message for each of these nodes (just one, for an emulator)
                     MessageApi.SendMessageResult result = Wearable.MessageApi.sendMessage(

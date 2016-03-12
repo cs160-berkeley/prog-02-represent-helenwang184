@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.wearable.view.WearableListView;
-import android.util.Log;
 import android.widget.TextView;
 
 public class ElectionViewWatch extends Activity implements WearableListView.ClickListener {
@@ -25,7 +24,6 @@ public class ElectionViewWatch extends Activity implements WearableListView.Clic
 //        Log.d("switch mobile", "5");
 //
         if (extras != null) {
-            Log.d("nihaoooo", extras.getString("zip_display"));
             tv.setText("37%               63%");
         }
     }

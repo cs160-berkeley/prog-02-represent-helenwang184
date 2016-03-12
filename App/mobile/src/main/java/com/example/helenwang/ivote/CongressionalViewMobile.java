@@ -11,7 +11,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -25,7 +24,6 @@ import java.util.List;
 
 public class CongressionalViewMobile extends AppCompatActivity implements View.OnClickListener {
 
-    ImageButton button1;
     Button button2;
     String zip_display;
     EditText zip;
@@ -41,7 +39,6 @@ public class CongressionalViewMobile extends AppCompatActivity implements View.O
         zip_display = i.getStringExtra("zip_display");
         zip.setText(zip_display);
 
-//        populateLegislators();
         Log.d("thread", "-1");
         String baseURL = "https://congress.api.sunlightfoundation.com";
         String apikey = "628b2d7f5645463cb6046121e6d0f5f4";
@@ -50,15 +47,22 @@ public class CongressionalViewMobile extends AppCompatActivity implements View.O
         String url = baseURL + zipAddition;
         new ProcessJSON().execute(url);
 
-//        Log.d("adapter", myLegislators.get(0) + "first legislator");
-        Log.d("adapter", " 1");
-        Log.d("adapter", myLegislators.size() + "after json size");
-
+        Log.d("Watch", "1");
+        String name = "";
+        String position = "";
+        String party = "";
+        for (int index = 0; index < myLegislators.size(); index++) {
+            name += myLegislators.get(index).getName() + ",";
+            position += myLegislators.get(index).getPosition() + ",";
+            party += myLegislators.get(index).getParty() + ",";
+        }
+        String msg = name + "|" + party + "|" + position;
+        Intent sendIntent = new Intent(getBaseContext(), PhoneToWatchService.class);
+        sendIntent.putExtra("msg", msg);
+        Log.d("Watch", msg);
+        startService(sendIntent);
         registerClickCallback();
 
-
-//        button1 = (ImageButton)findViewById(R.id.imageButton);
-//        button1.setOnClickListener(this);
         button2 = (Button)findViewById(R.id.button_zipco234de);
         button2.setOnClickListener(this);
 
@@ -120,8 +124,8 @@ public class CongressionalViewMobile extends AppCompatActivity implements View.O
                         int picture = R.drawable.big_bill;
                         String tweet = "NTSB just announced it will search again for El Faro’s missing data recorder. http://bit.ly/1PPOodK ";
                         String termEnds = array.getString("term_end");
-                        String committees = "Aging, Armed Services, Commerce, Science, Transportation, Finance";
-                        String bills = "Lithium Battery Safety Act of 2016 Feb 10, 2016";
+                        String committees = "Military Construction, Veterans Affairs, and Related Agencies, House Committee on the Budget, House Committee on Appropriations, Labor, Health and Human Services, Education, and Related Agencies, State, Foreign Operations, and Related Programs";
+                        String bills = "To amend title XVIII of the Social Security Act to improve access to mental health services under the Medicare program. 2015-10-08";
                         myLegislators.add(new Legislator(name, party, position, email, website, picture, tweet, termEnds, committees, bills));
                         Log.d("adapter", myLegislators.size() + "size");
                     }
@@ -140,7 +144,7 @@ public class CongressionalViewMobile extends AppCompatActivity implements View.O
         Log.d("adapter",  " 2");
         ArrayAdapter<Legislator> adapter = new MyListAdapter();
         ListView list = (ListView) findViewById(R.id.listView);
-        Log.d("adapter",  " set");
+        Log.d("adapter", " set");
         list.setAdapter(adapter);
     }
 
@@ -213,11 +217,10 @@ public class CongressionalViewMobile extends AppCompatActivity implements View.O
                 if (zip.getText().length() == 5) {
                     String zipcode_display = zip.getText().toString();
                     Intent congressionalViewMobile = new Intent(getApplicationContext(), com.example.helenwang.ivote.CongressionalViewMobile.class);
-//                    Intent sendIntent = new Intent(getBaseContext(), PhoneToWatchService.class);
                     congressionalViewMobile.putExtra("zip_display", zipcode_display);
-//                    sendIntent.putExtra("zip_display", zipcode_display);
                     startActivity(congressionalViewMobile);
-//                    startService(sendIntent);
+
+
                 } else {
                     Toast.makeText(this, "You did not enter a valid zipcode", Toast.LENGTH_SHORT).show();
                 }
